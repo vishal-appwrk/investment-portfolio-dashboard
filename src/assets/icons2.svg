@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="102px" viewBox="0 0 97 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Path 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.8%" y="-4.8%" width="113.5%" height="109.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="42" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="17" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0632921766 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Investment-portfolio-Copy-2" transform="translate(-968.000000, -382.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-3" filter="url(#filter-1)" transform="translate(119.000000, 78.000000)">
+                <g id="Group-13" transform="translate(56.000000, 237.000000)">
+                    <g id="Group-2-Copy" transform="translate(700.000000, 0.000000)">
+                        <g id="Group-9" transform="translate(103.000000, 43.000000)">
+                            <g id="Group-8">
+                                <path d="M52.6209407,26.762252 L54.9,28.8842737 L53.3779427,28.8842737 L53.3779427,36.3334957 L53.3779427,43.7867443 L53.3779427,51.2399929 L45.9246941,51.2399929 L45.9246941,43.7867443 L45.9246941,36.3334957 L45.9246941,28.8842737 L44.4026369,28.8842737 L49.6533317,24 L51.6988478,25.9005583 L51.6988478,24.7207626 L52.6209407,24.7207626 L52.6209407,26.762252 Z M40.9196223,32.1699846 L40.9196223,34.2155007 L43.1986816,36.3334957 L41.6766243,36.3334957 L41.6766243,43.7867443 L41.6766243,51.2399929 L34.2233757,51.2399929 L34.2233757,43.7867443 L34.2233757,36.3334957 L32.7013184,36.3334957 L37.9520133,31.449222 L39.9975294,33.3538069 L39.9975294,32.1699846 L40.9196223,32.1699846 Z M29.2183038,39.6232332 L29.2183038,41.6687493 L31.4973631,43.7867443 L29.9753059,43.7867443 L29.9753059,51.2399929 L22.5220573,51.2399929 L22.5220573,43.7867443 L21,43.7867443 L26.2506949,38.9024706 L28.2921843,40.8070555 L28.2921843,39.6232332 L29.2183038,39.6232332 Z" id="Path-2"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

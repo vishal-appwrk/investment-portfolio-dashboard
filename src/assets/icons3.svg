@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="102px" viewBox="0 0 97 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.8%" y="-4.8%" width="113.5%" height="109.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="42" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="17" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0632921766 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Investment-portfolio-Copy-2" transform="translate(-1725.000000, -380.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-3" filter="url(#filter-1)" transform="translate(119.000000, 78.000000)">
+                <g id="Group-13" transform="translate(56.000000, 237.000000)">
+                    <g id="Group-2-Copy-2" transform="translate(1396.000000, 0.000000)">
+                        <g id="Group" transform="translate(164.000000, 43.000000)">
+                            <g id="Group-10">
+                                <g id="Group-8">
+                                    <path d="M42.5243582,22 L24.0813134,22 L23.1783881,22 L23.1783881,22.9033035 L23.1783881,26.5195423 L23.1783881,27.4247363 L24.0813134,27.4247363 L42.5243582,27.4247363 C46.5576517,27.4247363 49.8392637,30.7048358 49.8392637,34.7400199 C49.8392637,38.7729353 46.5576517,42.0545473 42.5243582,42.0545473 L30.7810348,42.0545473 L30.7810348,37.3917015 L20,44.7678607 L30.7810348,52.1440199 L30.7810348,47.4789055 L42.5247363,47.4789055 C49.5477413,47.4789055 55.264,41.7626468 55.264,34.7392637 C55.264,27.71399 49.5477413,22 42.5243582,22 Z" id="Path"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

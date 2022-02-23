@@ -1,0 +1,225 @@
+<div class = "container-fluid card fc-conatiner fc-dashboard-text">
+	<div class="row row-grid card-header shadow-sm p-3 mb-5 bg-white rounded fc-common-card-header fc-card-header  fc-dashboard-header">
+		<div class="col-md-3 col-lg-4 fc-dashboard-header-container">
+			<div  class="fc-dashboard-header-text">
+				{{title}}
+			</div>
+		</div>
+		
+		<div class="col-md-2 mb-2 mb-md-0 fc-ui-container">
+			<select class="select-option form-control fc-dropdown-text"  [(ngModel)]='selectedCountry'>
+				<option class="fc-dropdown-text" *ngFor="let country of countries"> 
+					{{country}}
+				</option>
+			</select>
+		</div>
+		<div class="col-md-2 mb-2 mb-md-0 fc-ui-container">
+			<select class="select-option form-control fc-dropdown-text" [(ngModel)]='selectedRatingGroup'>
+				<option class="fc-dropdown-text" *ngFor="let ratinggrp of allRatinggroups"> 
+					{{ratinggrp}}
+				</option>
+			</select>
+		</div>
+		<div class="col-md-2 mb-2 mb-md-0 fc-ui-container">
+			<select class="select-option form-control fc-dropdown-text" [(ngModel)]='selectedClass'>
+				<option class="fc-dropdown-text" *ngFor="let assetclass of allAssetclass"> 
+					{{assetclass}}
+				</option>
+			</select>
+		</div>
+
+		<div class="col-md-3 col-lg-2 mb-2 mb-md-0 fc-button-container">
+			
+			<button type="button" class="btn btn-primary fc-button" (click) = 'onApplyFilter()'>Apply</button>
+			<button type="button" class="btn btn-primary fc-button" (click) = 'onResetFilter()'>Reset</button>																		
+		</div>
+	</div>
+
+
+	<div class = "card-body fc-main-card-body">
+		<div class = "row row-grid">
+			<div class="col-12">
+				<div class="card-deck">
+						<div class="shadow p-2 mb-5 card text-center fc-card-border fc-kpi-first shadow p-3 mb-2 mb-md-5 bg-white rounded fc-kpi-card-shadow">
+							<div class="card-header align-items-center  fc-card-header  fc-kpi-header fc-common-card-header">
+								<div class="shadow-sm p-3 mb-5 fc-icon-container fc-investment-icon"></div>
+								<div class="fc-kpi-header-text">Total Invested Amount</div>
+							</div>
+							<div class="card-body fc-kpi-body">
+								<p class="card-text fc-kpi-text">{{totalInvestMent}}</p>
+							</div>
+							
+						</div>
+	
+						<div class="shadow p-2 mb-5 card text-center fc-card-border fc-kpi-second shadow p-3 mb-2 mb-md-5 bg-white rounded fc-kpi-card-shadow">
+								<div class="card-header  fc-card-header  fc-kpi-header fc-common-card-header">
+									<div class="shadow-sm p-3 mb-5 fc-icon-container fc-investmentcount-icon"></div>
+									<div class="fc-kpi-header-text">Number of Investments</div>
+								</div>
+								<div class="card-body fc-kpi-body">
+									<p class="card-text fc-kpi-text">{{investmentCount}}</p>
+								</div>
+							
+						</div>
+	
+						<div class="shadow p-2 mb-5 card text-center fc-card-border fc-kpi-third shadow p-3 mb-2 mb-md-5 bg-white rounded fc-kpi-card-shadow">
+								<div class="card-header  fc-card-header fc-kpi-header fc-common-card-header">
+									<div class="shadow-sm p-3 mb-5 fc-icon-container fc-return-icon"></div>
+									<div class="fc-kpi-header-text">Rate of Return</div>
+								</div>
+								<div class="card-body fc-kpi-body">
+									<p class="card-text fc-kpi-text fc-kpi-arrow-contaier">{{rateOfReturn}}
+																		
+								</div>
+							
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row row-grid">
+			<div class="col-12">
+				<div class="card-deck">
+					<div class="card fc-card-border shadow-sm p-3 mb-2 mb-md-5 bg-white rounded fc-chart-card ">
+						<div class = "card-header fc-card-header fc-chart-card-header">
+							<div class="row">
+								<div class ="col-10 fc-chart-header">
+									{{lineChartHeader}}
+								</div>
+								<div class = "col-2 fc-toggle-container">
+									<!--<button class="btn btn-primary btn-xs fc-toggle-button fc-spline-icon" id = "toggle-spline" (click)="LineChange('spline')"></button>-->
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-column-icon" id = "toggle-line" (click)="LineChange('column2d')"></button>
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-line-icon" id = "line" (click)="LineChange('line')"></button>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<fusioncharts
+							type="line"
+							width = "100%"
+							(initialized)="LineInitialized($event)"
+							[dataSource]="linechartdata"
+							>
+							</fusioncharts> 
+						</div>
+						
+					</div>
+					<div class="card fc-card-border shadow-sm p-3 mb-2 mb-md-5 bg-white rounded fc-chart-card ">
+						<div class = "card-header fc-card-header fc-chart-card-header">
+							<div class="row">
+								<div class ="col-10 fc-chart-header">
+									{{columnChartHeader}}
+								</div>
+								<div class ="col-2 fc-toggle-container">
+									<!--<button class="btn btn-primary btn-xs fc-toggle-button fc-bar-icon" id = "toggle-bar" (click)="ColumnChange('bar2d')"></button>-->
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-pie-icon" id = "toggle-column" (click)="ColumnChange('pie2d')"></button>
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-column-icon" id = "column" (click)="ColumnChange('column2d')"></button>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<fusioncharts
+							type="column2D"
+							width = "100%"
+							(initialized)="ColumnInitialized($event)"
+							[dataSource]="columnchartdata"
+							>
+							</fusioncharts> 
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="row row-grid">
+ 		<div class="col-12">
+ 			<fusion-grid style="margin-bottom: 10%; width: 100%;height: 500px; background-color: white;" [dataTable]="dataTable" 
+			    [gridConfig]="gridConfig"
+			    (rendered)="rendered($event)"
+			    >
+			</fusion-grid>
+ 		</div>
+	</div>
+		<div class= "row row-grid">
+			<div class="col-12">
+				<div class="card-deck">
+					<div class="card fc-card-border shadow-sm p-3 mb-2 mb-md-5 bg-white rounded fc-chart-card ">
+						<div class = "card-header fc-card-header fc-chart-card-header">
+							<div class="row">
+								<div class ="col-10 fc-chart-header">
+									{{pieChartHeader}}
+								</div>
+								<div class ="col-2 fc-toggle-container">
+									<!--<button class="btn btn-primary btn-xs fc-toggle-button fc-donut-icon" id = "toggle-doughnut" (click)="PieChange('doughnut2d')"></button>-->
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-column-icon" id = "toggle-pie" (click)="PieChange('column2d')"></button>
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-pie-icon" id = "pie" (click)="PieChange('pie2d')"></button>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<fusioncharts
+							type="pie2D"
+							width = "100%"
+							(initialized)="PieInitialized($event)"
+							[dataSource]="piechartdata"
+							>
+							</fusioncharts>
+						</div>
+						
+					</div>
+					<div class="card fc-card-border shadow-sm p-3 mb-2 mb-md-5 bg-white rounded fc-chart-card ">
+						<div class = "card-header fc-card-header fc-chart-card-header">
+							<div class="row">
+								<div class ="col-10 fc-chart-header">
+									{{scatterChartHeader}}
+								</div>
+								<div class ="col-2 fc-toggle-container">
+									<button class="btn btn-primary btn-xs fc-toggle-button fc-bubble-icon" id = "bubble" (click)="ScatterChange('bubble')"></button>
+									<button id = "defaultButton" class="btn btn-primary btn-xs fc-toggle-button fc-scatter-icon" id = "scatter" (click)="ScatterChange('scatter')"></button>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<fusioncharts
+							type="scatter"
+							width = "100%"
+							(initialized)="ScatterInitialized($event)"
+							[dataSource]="scatterchartdata"
+							>
+							</fusioncharts> 
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row row-grid">
+			
+			<div class="col-md-12">
+				<div class="card fc-card-border shadow-sm p-3 mb-2 mb-md-5 bg-white rounded fc-card-custom-size fc-chart-card">
+					<div class = "card-header fc-card-header fc-chart-card-header">
+						<div class="row">
+							<div class ="col-md-12 fc-chart-header">
+								{{mapHeader}}
+							</div>
+						</div>
+					</div>	
+						
+					<fusioncharts
+					type="worldwithcountries"
+					width = "100%"
+					height = "460"
+					[dataSource]="worldmapdata"
+					>
+					</fusioncharts> 
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	
+</div>
+<router-outlet></router-outlet>
